@@ -1,0 +1,16 @@
+# CODEOWNERS
+# Each line assigns ownership to files/directories.
+# Owners are automatically requested for review on PRs.
+
+# Default owner for everything
+* @NatsuFox
+
+# Trace schema and normalizer — require extra scrutiny
+/collector/src/schema/        @NatsuFox
+/collector/src/normalizers/   @NatsuFox
+
+# Documentation
+/docs/                        @NatsuFox
+
+# CI/CD
+/.github/                     @NatsuFox

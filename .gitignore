@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Traces (user-generated, may contain sensitive data)
+traces/
+*.trace.json
+*.trace.db
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+
+# Test output
+coverage/
+.nyc_output/
+
+# Embedded source checkout kept outside this repo history
+openclaw-source/
