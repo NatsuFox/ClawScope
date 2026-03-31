@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="ClawScope — 面向现代 AI Runtime 的本地优先 Agent Profiler 与 Trace Viewer。时间花在哪里？成本花在哪里？Agent 为什么这样执行？"
+    />
+    <title>ClawScope | Agent Profiler & Trace Viewer</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+
+      <!-- ═══ HEADER ═══ -->
+      <header class="site-header glass-panel">
+        <a class="brand" href="#top" aria-label="ClawScope 首页">
+          <span class="brand-wordmark">
+            <span class="brand-claw">Claw</span><span class="brand-chat">Chat</span>
+          </span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="切换导航"
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="主导航">
+          <a href="#top">
+            <span class="nav-stack">
+              <span class="nav-label">介绍</span>
+              <span class="nav-sub">Intro</span>
+            </span>
+          </a>
+          <a href="#features">
+            <span class="nav-stack">
+              <span class="nav-label">特性</span>
+              <span class="nav-sub">Features</span>
+            </span>
+          </a>
+          <a href="#quickstart">
+            <span class="nav-stack">
+              <span class="nav-label">快速开始</span>
+              <span class="nav-sub">Quickstart</span>
+            </span>
+          </a>
+          <a href="#roadmap">
+            <span class="nav-stack">
+              <span class="nav-label">路线图</span>
+              <span class="nav-sub">Roadmap</span>
+            </span>
+          </a>
+          <a
+            class="nav-cta"
+            href="https://github.com/powers/ClawScope"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="在 GitHub 上查看 ClawScope"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 .75A11.25 11.25 0 0 0 .75 12a11.25 11.25 0 0 0 7.7 10.69c.56.1.76-.24.76-.54 0-.27-.01-.98-.02-1.92-3.13.68-3.8-1.51-3.8-1.51-.5-1.29-1.24-1.63-1.24-1.63-1.02-.7.08-.68.08-.68 1.13.08 1.72 1.15 1.72 1.15 1 .1 1.94 1.22 1.94 1.22.9 1.53 2.37 1.09 2.95.83.09-.72.35-1.21.63-1.49-2.5-.28-5.13-1.25-5.13-5.56 0-1.23.44-2.23 1.15-3.02-.12-.28-.5-1.4.11-2.92 0 0 .94-.3 3.08 1.15a10.63 10.63 0 0 1 5.6 0c2.14-1.45 3.08-1.15 3.08-1.15.61 1.52.23 2.64.11 2.92.72.79 1.15 1.79 1.15 3.02 0 4.32-2.63 5.28-5.14 5.56.36.31.68.91.68 1.84 0 1.33-.01 2.4-.01 2.73 0 .3.2.65.77.54A11.25 11.25 0 0 0 23.25 12 11.25 11.25 0 0 0 12 .75Z" />
+            </svg>
+            GitHub
+          </a>
+        </nav>
+      </header>
+
+      <!-- ═══ MAIN ═══ -->
+      <main>
+        <!-- ═══ HERO ═══ -->
+        <section id="top" class="hero section-animate">
+          <div class="hero-lead glass-panel">
+            <div class="hero-headline">
+              <p class="eyebrow">
+                <span class="eyebrow-cn">Agent Profiler</span>
+                <span class="eyebrow-sep">·</span>
+                <span class="eyebrow-en">Trace Viewer</span>
+              </p>
+              <h1 class="hero-wordmark">
+                <span class="wordmark-primary">Claw</span><span class="wordmark-accent">Chat</span>
+              </h1>
+              <p class="hero-tagline-cn">面向现代 AI Runtime 的本地优先 Agent Profiler 与 Trace Viewer</p>
+              <p class="hero-tagline-en">Local-first agent profiler &amp; trace viewer for modern AI runtimes</p>
+            </div>
+
+            <div class="hero-questions">
+              <div class="question-card interactive-card" style="--card-accent: var(--accent-cyan)">
+                <span class="question-icon" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <circle cx="10" cy="10" r="8"/>
+                    <polyline points="10,6 10,10 13,12"/>
+                  </svg>
+                </span>
+                <strong>时间花在哪里？</strong>
+                <small>Where does time go?</small>
+              </div>
+              <div class="question-card interactive-card" style="--card-accent: var(--accent-amber)">
+                <span class="question-icon" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <circle cx="10" cy="10" r="8"/>
+                    <path d="M10 6v1m0 6v1M7.5 9a2.5 2.5 0 0 1 5 0c0 1.5-2.5 2-2.5 3.5"/>
+                  </svg>
+                </span>
+                <strong>成本花在哪里？</strong>
+                <small>Where does cost go?</small>
+              </div>
+              <div class="question-card interactive-card" style="--card-accent: var(--accent-violet)">
+                <span class="question-icon" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <circle cx="10" cy="10" r="8"/>
+                    <path d="M7 8c0-1.7 1.3-3 3-3s3 1.3 3 3-1.3 3-3 3v2"/>
+                    <circle cx="10" cy="15.5" r="0.75" fill="currentColor" stroke="none"/>
+                  </svg>
+                </span>
+                <strong>Agent 为什么这样执行？</strong>
+                <small>Why did the agent execute this way?</small>
+              </div>
+            </div>
+
+            <!-- install terminal -->
+            <div class="install-terminal" data-terminal>
+              <div class="terminal-bar">
+                <div class="terminal-dots" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="terminal-tabs" role="tablist">
+                  <button class="terminal-tab is-active" type="button" data-terminal-tab="collector" role="tab" aria-selected="true">Collector</button>
+                  <button class="terminal-tab" type="button" data-terminal-tab="viewer" role="tab" aria-selected="false">Viewer</button>
+                  <button class="terminal-tab" type="button" data-terminal-tab="import" role="tab" aria-selected="false">Import</button>
+                </div>
+                <button class="terminal-copy" type="button" data-terminal-copy aria-label="复制命令">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                    <rect x="5" y="5" width="8" height="8" rx="1.5"/>
+                    <path d="M11 5V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h1"/>
+                  </svg>
+                  <span data-copy-label>Copy</span>
+                </button>
+              </div>
+              <div class="terminal-body">
+                <p class="terminal-panel is-active" data-terminal-panel="collector"><span class="term-prompt">$</span><code>cd collector &amp;&amp; npm install &amp;&amp; node src/cli.js discover claude-code --limit 5</code></p>
+                <p class="terminal-panel" data-terminal-panel="viewer"><span class="term-prompt">$</span><code>cd viewer &amp;&amp; npm install &amp;&amp; npm run dev</code></p>
+                <p class="terminal-panel" data-terminal-panel="import"><span class="term-prompt">$</span><code>node src/cli.js import claude-code ~/.claude/projects/&lt;session&gt;.jsonl ../traces/my-session</code></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- metrics -->
+          <div class="hero-metrics section-animate delay-1">
+            <article class="metric-card interactive-card">
+              <strong>3</strong>
+              <span>支持的 Runtime</span>
+              <small>OpenClaw · Claude Code · Codex</small>
+            </article>
+            <article class="metric-card interactive-card">
+              <strong>4 层</strong>
+              <span>采集、规范化、存储、可视化</span>
+              <small>collection → visualization</small>
+            </article>
+            <article class="metric-card interactive-card">
+              <strong>Waterfall</strong>
+              <span>时间线首页视图</span>
+              <small>span-level trace viewer</small>
+            </article>
+          </div>
+        </section>
+
+        <!-- ═══ OVERVIEW ═══ -->
+        <section id="overview" class="overview section-animate delay-2">
+          <div class="overview-inner glass-panel">
+            <div class="overview-copy">
+              <p class="eyebrow">
+                <span class="eyebrow-cn">概览</span>
+                <span class="eyebrow-sep">·</span>
+                <span class="eyebrow-en">Overview</span>
+              </p>
+              <h2>从原始事件到结构化 Replay，ClawScope 把采集、规范化、存储与可视化串成一条确定性 Trace 管线。</h2>
+              <p class="overview-english">From raw runtime signals to structured replay — a deterministic trace pipeline connecting collection, normalization, storage, and visualization.</p>
+              <div class="overview-actions">
+                <a class="button primary" href="https://github.com/powers/ClawScope" target="_blank" rel="noreferrer">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 .75A11.25 11.25 0 0 0 .75 12a11.25 11.25 0 0 0 7.7 10.69c.56.1.76-.24.76-.54 0-.27-.01-.98-.02-1.92-3.13.68-3.8-1.51-3.8-1.51-.5-1.29-1.24-1.63-1.24-1.63-1.02-.7.08-.68.08-.68 1.13.08 1.72 1.15 1.72 1.15 1 .1 1.94 1.22 1.94 1.22.9 1.53 2.37 1.09 2.95.83.09-.72.35-1.21.63-1.49-2.5-.28-5.13-1.25-5.13-5.56 0-1.23.44-2.23 1.15-3.02-.12-.28-.5-1.4.11-2.92 0 0 .94-.3 3.08 1.15a10.63 10.63 0 0 1 5.6 0c2.14-1.45 3.08-1.15 3.08-1.15.61 1.52.23 2.64.11 2.92.72.79 1.15 1.79 1.15 3.02 0 4.32-2.63 5.28-5.14 5.56.36.31.68.91.68 1.84 0 1.33-.01 2.4-.01 2.73 0 .3.2.65.77.54A11.25 11.25 0 0 0 23.25 12 11.25 11.25 0 0 0 12 .75Z" />
+                  </svg>
+                  探索 ClawScope
+                </a>
+                <a class="button secondary" href="#quickstart">快速开始</a>
+              </div>
+            </div>
+            <div class="pipeline-diagram" aria-label="ClawScope 四层管线">
+              <div class="pipeline-node" data-layer="collect">
+                <span class="pipeline-icon" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <path d="M3 5h14M3 10h14M3 15h14"/>
+                  </svg>
+                </span>
+                <span class="pipeline-label-cn">采集</span>
+                <span class="pipeline-label-en">Collection</span>
+              </div>
+              <span class="pipeline-arrow" aria-hidden="true">→</span>
+              <div class="pipeline-node" data-layer="normalize">
+                <span class="pipeline-icon" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <rect x="3" y="3" width="14" height="14" rx="2"/>
+                    <path d="M7 7h6M7 10h6M7 13h3"/>
+                  </svg>
+                </span>
+                <span class="pipeline-label-cn">规范化</span>
+                <span class="pipeline-label-en">Normalization</span>
+              </div>
+              <span class="pipeline-arrow" aria-hidden="true">→</span>
+              <div class="pipeline-node" data-layer="store">
+                <span class="pipeline-icon" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <ellipse cx="10" cy="6" rx="7" ry="2.5"/>
+                    <path d="M3 6v8c0 1.38 3.13 2.5 7 2.5s7-1.12 7-2.5V6"/>
+                    <path d="M3 10c0 1.38 3.13 2.5 7 2.5s7-1.12 7-2.5"/>
+                  </svg>
+                </span>
+                <span class="pipeline-label-cn">存储</span>
+                <span class="pipeline-label-en">Storage</span>
+              </div>
+              <span class="pipeline-arrow" aria-hidden="true">→</span>
+              <div class="pipeline-node" data-layer="viz">
+                <span class="pipeline-icon" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <rect x="2" y="8" width="4" height="9" rx="1"/>
+                    <rect x="8" y="5" width="4" height="12" rx="1"/>
+                    <rect x="14" y="2" width="4" height="15" rx="1"/>
+                  </svg>
+                </span>
+                <span class="pipeline-label-cn">可视化</span>
+                <span class="pipeline-label-en">Visualization</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ FEATURES ═══ -->
+        <section id="features" class="features section-animate">
+          <header class="section-header">
+            <p class="eyebrow">
+              <span class="eyebrow-cn">核心特性</span>
+              <span class="eyebrow-sep">·</span>
+              <span class="eyebrow-en">Features</span>
+            </p>
+            <h2>Trace 分析的完整工具链</h2>
+          </header>
+          <div class="feature-grid">
+            <article class="feature-card interactive-card">
+              <span class="feature-icon" style="--icon-color: var(--accent-cyan)" aria-hidden="true">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <path d="M3 4h14M3 8h10M3 12h12M3 16h8"/>
+                </svg>
+              </span>
+              <h3>多 Runtime 导入</h3>
+              <p>支持 OpenClaw 原始事件、Claude Code 会话 JSONL、Codex rollout JSONL 统一导入，无需格式转换。</p>
+              <span class="feature-tag">OpenClaw · Claude Code · Codex</span>
+            </article>
+            <article class="feature-card interactive-card">
+              <span class="feature-icon" style="--icon-color: var(--accent-cyan)" aria-hidden="true">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <rect x="2" y="4" width="16" height="12" rx="2"/>
+                  <path d="M6 8h8M6 11h5"/>
+                </svg>
+              </span>
+              <h3>统一 Trace Contract</h3>
+              <p>raw → normalized → derived 三层模型，确定性可重放，每条 span 都可溯源到原始事件。</p>
+              <span class="feature-tag">span · event · agent</span>
+            </article>
+            <article class="feature-card interactive-card">
+              <span class="feature-icon" style="--icon-color: var(--accent-amber)" aria-hidden="true">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <rect x="2" y="8" width="4" height="9" rx="1"/>
+                  <rect x="8" y="5" width="4" height="12" rx="1"/>
+                  <rect x="14" y="2" width="4" height="15" rx="1"/>
+                </svg>
+              </span>
+              <h3>Waterfall 时间线</h3>
+              <p>以 Waterfall 视图呈现所有 span，可按类型过滤、关键字搜索，点击展开完整 Span 详情弹窗。</p>
+              <span class="feature-tag">waterfall · filter · detail</span>
+            </article>
+            <article class="feature-card interactive-card">
+              <span class="feature-icon" style="--icon-color: var(--accent-amber)" aria-hidden="true">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <circle cx="10" cy="10" r="7"/>
+                  <path d="M10 7v3l2 2"/>
+                </svg>
+              </span>
+              <h3>Cost 与 Summary 面板</h3>
+              <p>Token 用量、估算成本、执行时长一目了然。Summary 面板提供 trace 级别的聚合洞察。</p>
+              <span class="feature-tag">cost · tokens · summary</span>
+            </article>
+            <article class="feature-card interactive-card">
+              <span class="feature-icon" style="--icon-color: var(--accent-violet)" aria-hidden="true">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <circle cx="10" cy="5" r="2.5"/>
+                  <circle cx="4" cy="15" r="2.5"/>
+                  <circle cx="16" cy="15" r="2.5"/>
+                  <path d="M10 7.5v3M10 10.5l-4 2.5M10 10.5l4 2.5"/>
+                </svg>
+              </span>
+              <h3>多 Agent 可视化</h3>
+              <p>Swimlane 布局展示 sub-agent 并发执行，清晰呈现 agent 层级与调度关系。</p>
+              <span class="feature-tag">swimlane · hierarchy · sub-agent</span>
+            </article>
+            <article class="feature-card interactive-card">
+              <span class="feature-icon" style="--icon-color: var(--accent-violet)" aria-hidden="true">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <path d="M3 10a7 7 0 1 0 14 0A7 7 0 0 0 3 10Z"/>
+                  <path d="M3 10h14M10 3c-2 3-2 11 0 14M10 3c2 3 2 11 0 14"/>
+                </svg>
+              </span>
+              <h3>本地优先，隐私安全</h3>
+              <p>所有 trace 数据留在本机，无需上传云端。支持离线 Replay，完整保留 agent 执行上下文。</p>
+              <span class="feature-tag">local-first · offline · privacy</span>
+            </article>
+          </div>
+        </section>
+
+        <!-- ═══ QUICKSTART ═══ -->
+        <section id="quickstart" class="quickstart section-animate">
+          <header class="section-header">
+            <p class="eyebrow">
+              <span class="eyebrow-cn">快速开始</span>
+              <span class="eyebrow-sep">·</span>
+              <span class="eyebrow-en">Quickstart</span>
+            </p>
+            <h2>三步启动 Trace 分析</h2>
+          </header>
+          <div class="quickstart-steps">
+            <div class="qs-step glass-panel">
+              <div class="qs-step-header">
+                <span class="qs-num">01</span>
+                <div>
+                  <h3>导入本地 Trace</h3>
+                  <p class="qs-sub">从 Claude Code、Codex 或 OpenClaw 导入会话</p>
+                </div>
+              </div>
+              <div class="qs-terminal" data-qs-terminal="1">
+                <div class="terminal-bar">
+                  <div class="terminal-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <div class="terminal-tabs" role="tablist">
+                    <button class="terminal-tab is-active" type="button" data-qs-tab="claude" role="tab" aria-selected="true">Claude Code</button>
+                    <button class="terminal-tab" type="button" data-qs-tab="codex" role="tab" aria-selected="false">Codex</button>
+                    <button class="terminal-tab" type="button" data-qs-tab="openclaw" role="tab" aria-selected="false">OpenClaw</button>
+                  </div>
+                  <button class="terminal-copy" type="button" data-qs-copy aria-label="复制命令">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="5" y="5" width="8" height="8" rx="1.5"/><path d="M11 5V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h1"/></svg>
+                    <span data-copy-label>Copy</span>
+                  </button>
+                </div>
+                <div class="terminal-body">
+                  <p class="terminal-panel is-active" data-qs-panel="claude"><span class="term-prompt">$</span><code>node src/cli.js import claude-code ~/.claude/projects/&lt;project&gt;/&lt;session&gt;.jsonl ../traces/my-session</code></p>
+                  <p class="terminal-panel" data-qs-panel="codex"><span class="term-prompt">$</span><code>node src/cli.js import codex ~/.codex/sessions/YYYY/MM/DD/rollout-....jsonl ../traces/my-session</code></p>
+                  <p class="terminal-panel" data-qs-panel="openclaw"><span class="term-prompt">$</span><code>node src/cli.js import openclaw ./raw-events ../traces/my-trace</code></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="qs-step glass-panel">
+              <div class="qs-step-header">
+                <span class="qs-num">02</span>
+                <div>
+                  <h3>启动 Trace Server</h3>
+                  <p class="qs-sub">本地 API 服务，从 traces/ 目录读取数据</p>
+                </div>
+              </div>
+              <div class="qs-terminal">
+                <div class="terminal-bar">
+                  <div class="terminal-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                </div>
+                <div class="terminal-body">
+                  <p><span class="term-prompt">$</span><code>cd viewer/server &amp;&amp; npm install &amp;&amp; npm start</code></p>
+                  <p class="term-comment"># → API 在 http://localhost:3001</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="qs-step glass-panel">
+              <div class="qs-step-header">
+                <span class="qs-num">03</span>
+                <div>
+                  <h3>启动 Viewer</h3>
+                  <p class="qs-sub">React Waterfall Viewer，实时渲染 trace</p>
+                </div>
+              </div>
+              <div class="qs-terminal">
+                <div class="terminal-bar">
+                  <div class="terminal-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                </div>
+                <div class="terminal-body">
+                  <p><span class="term-prompt">$</span><code>cd viewer &amp;&amp; npm install &amp;&amp; npm run dev</code></p>
+                  <p class="term-comment"># → Viewer 在 http://127.0.0.1:3013</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ ROADMAP ═══ -->
+        <section id="roadmap" class="roadmap section-animate">
+          <header class="section-header">
+            <p class="eyebrow">
+              <span class="eyebrow-cn">路线图</span>
+              <span class="eyebrow-sep">·</span>
+              <span class="eyebrow-en">Roadmap</span>
+            </p>
+            <h2>分阶段交付，稳步推进</h2>
+          </header>
+          <div class="roadmap-grid">
+            <div class="roadmap-phase is-done">
+              <span class="phase-badge">Phase 1</span>
+              <h3>Trace Contract</h3>
+              <p>统一事件模型、OpenClaw raw 事件清单、normalized trace schema</p>
+              <span class="phase-status">✓ 已完成</span>
+            </div>
+            <div class="roadmap-phase is-done">
+              <span class="phase-badge">Phase 2</span>
+              <h3>Collector + Normalizer</h3>
+              <p>Claude Code / Codex / OpenClaw 导入器，span 规范化管线</p>
+              <span class="phase-status">✓ 已完成</span>
+            </div>
+            <div class="roadmap-phase is-done">
+              <span class="phase-badge">Phase 3</span>
+              <h3>Waterfall Viewer</h3>
+              <p>Waterfall 时间线、Cost 面板、Summary、多 Agent 可视化原型</p>
+              <span class="phase-status">✓ 已完成</span>
+            </div>
+            <div class="roadmap-phase">
+              <span class="phase-badge">Phase 4</span>
+              <h3>Live Collection</h3>
+              <p>实时流式 trace 采集、增量 viewer 更新、hook 集成</p>
+              <span class="phase-status">— 计划中</span>
+            </div>
+            <div class="roadmap-phase">
+              <span class="phase-badge">Phase 5</span>
+              <h3>Advanced Analysis</h3>
+              <p>跨会话对比、回归检测、性能基准、语义摘要层</p>
+              <span class="phase-status">— 计划中</span>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- ═══ FOOTER ═══ -->
+      <footer class="site-footer">
+        <div class="site-footer-inner">
+          <span class="footer-brand">
+            <span class="brand-claw">Claw</span><span class="brand-chat">Chat</span>
+          </span>
+          <nav class="footer-links" aria-label="页脚导航">
+            <a href="docs/index.md">Docs</a>
+            <a href="docs/foundation/overview.md">Overview</a>
+            <a href="docs/foundation/roadmap.md">Roadmap</a>
+            <a href="https://github.com/powers/ClawScope" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="LICENSE">MIT License</a>
+          </nav>
+          <p class="footer-copy">Local-first · Privacy-first · Open source</p>
+        </div>
+      </footer>
+
+    </div><!-- /page-shell -->
+  </body>
+</html>
