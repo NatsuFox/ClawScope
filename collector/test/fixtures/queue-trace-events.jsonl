@@ -1,0 +1,16 @@
+{"type":"queue.lane.enqueue","seq":1,"ts":1710778500000,"lane":"default","queueDepth":3,"data":{"queueSize":3}}
+{"type":"queue.lane.dequeue","seq":2,"ts":1710778500500,"lane":"default","queueDepth":2,"data":{"queueSize":2,"waitMs":490}}
+{"type":"webhook.received","seq":3,"ts":1710778501000,"channel":"telegram","updateType":"message","data":{"chatId":"chat_telegram_456789"}}
+{"type":"message.queued","seq":4,"ts":1710778501050,"channel":"telegram","sessionKey":"agent:telegram:session_xyz789","queueDepth":2,"data":{"source":"webhook"}}
+{"type":"session.state","seq":5,"ts":1710778501100,"sessionKey":"agent:telegram:session_xyz789","queueDepth":2,"data":{"prevState":"idle","state":"processing","reason":"message_received"}}
+{"type":"run.attempt","seq":1,"ts":1710778501150,"runId":"run_queue_001","sessionKey":"agent:telegram:session_xyz789","data":{"attempt":1}}
+{"type":"lifecycle","seq":1,"ts":1710778501150,"runId":"run_queue_001","sessionKey":"agent:telegram:session_xyz789","stream":"lifecycle","data":{"phase":"start","startedAt":1710778501150}}
+{"type":"model.usage","seq":2,"ts":1710778503800,"runId":"run_queue_001","sessionKey":"agent:telegram:session_xyz789","channel":"telegram","model":"claude-sonnet-4","provider":"anthropic","tokens":{"input":850,"output":320,"cacheRead":600,"cacheWrite":0,"total":1170},"costUsd":0.0042,"durationMs":2600,"context":{"limit":200000,"used":1170}}
+{"type":"tool_start","seq":3,"ts":1710778503900,"runId":"run_queue_001","sessionKey":"agent:telegram:session_xyz789","stream":"tool","toolCallId":"toolu_02XYZ456","data":{"phase":"tool_start","toolName":"Bash","args":{"command":"ls -la"}}}
+{"type":"tool_end","seq":4,"ts":1710778504800,"runId":"run_queue_001","sessionKey":"agent:telegram:session_xyz789","stream":"tool","toolCallId":"toolu_02XYZ456","data":{"phase":"tool_end","durationMs":900}}
+{"type":"tool_result","seq":5,"ts":1710778504850,"runId":"run_queue_001","sessionKey":"agent:telegram:session_xyz789","stream":"tool","toolCallId":"toolu_02XYZ456","data":{"phase":"tool_result","result":"total 24\ndrwxr-xr-x 3 user user 4096 Mar 18 10:00 .\ndrwxr-xr-x 5 user user 4096 Mar 18 09:55 ..","isError":false}}
+{"type":"lifecycle","seq":6,"ts":1710778505000,"runId":"run_queue_001","sessionKey":"agent:telegram:session_xyz789","stream":"lifecycle","data":{"phase":"end","endedAt":1710778505000}}
+{"type":"session.state","seq":6,"ts":1710778505050,"sessionKey":"agent:telegram:session_xyz789","queueDepth":1,"data":{"prevState":"processing","state":"idle","reason":"run_completed"}}
+{"type":"message.processed","seq":7,"ts":1710778505300,"channel":"telegram","sessionKey":"agent:telegram:session_xyz789","data":{"outcome":"completed","chatId":"chat_telegram_456789","messageId":"msg_telegram_012"}}
+{"type":"webhook.processed","seq":8,"ts":1710778505500,"channel":"telegram","updateType":"message","data":{"chatId":"chat_telegram_456789"}}
+{"type":"diagnostic.heartbeat","seq":9,"ts":1710778510000,"data":{"uptime":3600000,"activeRuns":0,"queueDepth":0}}

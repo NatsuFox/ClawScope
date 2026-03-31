@@ -1,0 +1,13 @@
+{"type":"webhook.received","seq":1,"ts":1710778500000,"channel":"discord","updateType":"message","data":{"chatId":"chat_discord_123"}}
+{"type":"message.queued","seq":2,"ts":1710778500050,"channel":"discord","sessionKey":"agent:discord:session_001","queueDepth":1,"data":{"source":"webhook"}}
+{"type":"session.state","seq":3,"ts":1710778500100,"sessionKey":"agent:discord:session_001","queueDepth":1,"data":{"prevState":"idle","state":"processing","reason":"message_received"}}
+{"type":"lifecycle","seq":1,"ts":1710778500150,"runId":"run_001","sessionKey":"agent:discord:session_001","stream":"lifecycle","data":{"phase":"start","startedAt":1710778500150}}
+{"type":"model.usage","seq":2,"ts":1710778502650,"runId":"run_001","sessionKey":"agent:discord:session_001","channel":"discord","model":"claude-opus-4","provider":"anthropic","tokens":{"input":850,"output":320,"cacheRead":0,"cacheWrite":600,"total":1170},"costUsd":0.0042,"durationMs":2500,"context":{"limit":200000,"used":1170}}
+{"type":"tool_start","seq":3,"ts":1710778503200,"runId":"run_001","sessionKey":"agent:discord:session_001","stream":"tool","toolCallId":"toolu_001","data":{"phase":"tool_start","toolName":"Read","args":{"file_path":"/root/project/README.md"}}}
+{"type":"tool_end","seq":4,"ts":1710778503350,"runId":"run_001","sessionKey":"agent:discord:session_001","stream":"tool","toolCallId":"toolu_001","data":{"phase":"tool_end","durationMs":150}}
+{"type":"tool_result","seq":5,"ts":1710778503400,"runId":"run_001","sessionKey":"agent:discord:session_001","stream":"tool","toolCallId":"toolu_001","data":{"phase":"tool_result","result":"# Project\n\nThis is a test project.","isError":false}}
+{"type":"model.usage","seq":6,"ts":1710778506900,"runId":"run_001","sessionKey":"agent:discord:session_001","channel":"discord","model":"claude-opus-4","provider":"anthropic","tokens":{"input":1200,"output":180,"cacheRead":600,"cacheWrite":0,"total":1380},"costUsd":0.0028,"durationMs":3500,"context":{"limit":200000,"used":1980}}
+{"type":"lifecycle","seq":7,"ts":1710778507000,"runId":"run_001","sessionKey":"agent:discord:session_001","stream":"lifecycle","data":{"phase":"end","endedAt":1710778507000}}
+{"type":"session.state","seq":4,"ts":1710778507050,"sessionKey":"agent:discord:session_001","queueDepth":0,"data":{"prevState":"processing","state":"idle","reason":"run_completed"}}
+{"type":"message.processed","seq":5,"ts":1710778507100,"channel":"discord","sessionKey":"agent:discord:session_001","data":{"outcome":"completed","durationMs":7050,"chatId":"chat_discord_123","messageId":"msg_discord_001"}}
+{"type":"webhook.processed","seq":6,"ts":1710778507200,"channel":"discord","updateType":"message","data":{"chatId":"chat_discord_123"}}

@@ -1,0 +1,11 @@
+{"timestamp":"2026-03-20T11:00:00.000Z","type":"session_meta","payload":{"id":"codex-thread-1","cwd":"/tmp/codex-project","cli_version":"0.115.0","agent_nickname":"Codex","agent_role":"assistant","model_provider":"openai","originator":"user","source":"cli","timestamp":"2026-03-20T11:00:00.000Z","git":{"branch":"main"}}}
+{"timestamp":"2026-03-20T11:00:00.010Z","type":"event_msg","payload":{"type":"task_started","turn_id":"turn-1","model_context_window":950000,"collaboration_mode_kind":"default"}}
+{"timestamp":"2026-03-20T11:00:00.020Z","type":"turn_context","payload":{"turn_id":"turn-1","cwd":"/tmp/codex-project","model":"gpt-5.2","approval_policy":"never","sandbox_policy":"danger-full-access","timezone":"Asia/Shanghai","current_date":"2026-03-20","summary":"Initial turn context"}}
+{"timestamp":"2026-03-20T11:00:00.030Z","type":"event_msg","payload":{"type":"user_message","message":"Open the README and summarize it.","images":[],"local_images":[],"text_elements":[]}}
+{"timestamp":"2026-03-20T11:00:01.000Z","type":"response_item","payload":{"type":"reasoning","summary":[{"text":"I should inspect the file and then answer."}],"content":[],"encrypted_content":null}}
+{"timestamp":"2026-03-20T11:00:01.500Z","type":"response_item","payload":{"type":"function_call","name":"mcp__claude__Read","arguments":"{\"file_path\":\"/tmp/codex-project/README.md\"}","call_id":"call-read-1"}}
+{"timestamp":"2026-03-20T11:00:02.200Z","type":"response_item","payload":{"type":"function_call_output","call_id":"call-read-1","output":"[{\"type\":\"text\",\"text\":\"# Codex Demo\"}]"}}
+{"timestamp":"2026-03-20T11:00:02.400Z","type":"response_item","payload":{"type":"web_search_call","status":"completed","action":{"type":"search","query":"codex demo","queries":["codex demo"]}}}
+{"timestamp":"2026-03-20T11:00:03.000Z","type":"event_msg","payload":{"type":"agent_message","message":"The repository is a Codex demo with a single README.","phase":"final_answer"}}
+{"timestamp":"2026-03-20T11:00:03.100Z","type":"event_msg","payload":{"type":"token_count","info":null,"rate_limits":{"limit_id":"codex","plan_type":"pro"}}}
+{"timestamp":"2026-03-20T11:00:03.500Z","type":"event_msg","payload":{"type":"task_complete","turn_id":"turn-1","last_agent_message":"The repository is a Codex demo with a single README."}}
