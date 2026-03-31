@@ -1,0 +1,388 @@
+{
+  "metadata": {
+    "trace_id": "trace_multi_001",
+    "description": "Multi-agent execution with coordinator spawning specialist agents",
+    "start_time": "2026-03-18T15:00:00.000Z",
+    "end_time": "2026-03-18T15:00:28.750Z",
+    "total_duration_ms": 28750,
+    "total_cost_usd": 0.0487,
+    "agent_count": 3
+  },
+  "events": [
+    {
+      "type": "webhook.received",
+      "seq": 1,
+      "ts": 1710774000000,
+      "channel": "slack",
+      "updateType": "message",
+      "chatId": "chat_slack_C01ABC"
+    },
+    {
+      "type": "message.queued",
+      "seq": 2,
+      "ts": 1710774000050,
+      "channel": "slack",
+      "source": "webhook",
+      "queueDepth": 1,
+      "sessionKey": "agent:slack:session_xyz789"
+    },
+    {
+      "type": "queue.lane.enqueue",
+      "seq": 3,
+      "ts": 1710774000100,
+      "lane": "default",
+      "queueSize": 1
+    },
+    {
+      "type": "queue.lane.dequeue",
+      "seq": 4,
+      "ts": 1710774000150,
+      "lane": "default",
+      "queueSize": 0,
+      "waitMs": 50
+    },
+    {
+      "type": "session.state",
+      "seq": 5,
+      "ts": 1710774000200,
+      "sessionKey": "agent:slack:session_xyz789",
+      "prevState": "idle",
+      "state": "processing",
+      "reason": "message_received",
+      "queueDepth": 1
+    },
+    {
+      "type": "lifecycle",
+      "seq": 1,
+      "ts": 1710774000250,
+      "runId": "run_coordinator_001",
+      "sessionKey": "agent:slack:session_xyz789",
+      "stream": "lifecycle",
+      "data": {
+        "phase": "start",
+        "startedAt": 1710774000250
+      }
+    },
+    {
+      "type": "model.usage",
+      "seq": 6,
+      "ts": 1710774004100,
+      "runId": "run_coordinator_001",
+      "sessionKey": "agent:slack:session_xyz789",
+      "channel": "slack",
+      "model": "claude-opus-4",
+      "provider": "anthropic",
+      "tokens": {
+        "input": 2200,
+        "output": 680,
+        "cacheRead": 0,
+        "cacheWrite": 1800,
+        "total": 2880
+      },
+      "costUsd": 0.0145,
+      "durationMs": 3850,
+      "context": {
+        "limit": 200000,
+        "used": 2880
+      }
+    },
+    {
+      "type": "lifecycle",
+      "seq": 2,
+      "ts": 1710774004500,
+      "runId": "run_specialist_code_001",
+      "sessionKey": "agent:slack:session_xyz789",
+      "stream": "lifecycle",
+      "data": {
+        "phase": "start",
+        "startedAt": 1710774004500,
+        "parentRunId": "run_coordinator_001"
+      }
+    },
+    {
+      "type": "lifecycle",
+      "seq": 3,
+      "ts": 1710774004550,
+      "runId": "run_specialist_docs_001",
+      "sessionKey": "agent:slack:session_xyz789",
+      "stream": "lifecycle",
+      "data": {
+        "phase": "start",
+        "startedAt": 1710774004550,
+        "parentRunId": "run_coordinator_001"
+      }
+    },
+    {
+      "type": "model.usage",
+      "seq": 7,
+      "ts": 1710774007800,
+      "runId": "run_specialist_code_001",
+      "sessionKey": "agent:slack:session_xyz789",
+      "channel": "slack",
+      "model": "claude-sonnet-4",
+      "provider": "anthropic",
+      "tokens": {
+        "input": 1500,
+        "output": 450,
+        "cacheRead": 0,
+        "cacheWrite": 1200,
+        "total": 1950
+      },
+      "costUsd": 0.0078,
+      "durationMs": 3300,
+      "context": {
+        "limit": 200000,
+        "used": 1950
+      }
+    },
+    {
+      "type": "tool",
+      "seq": 4,
+      "ts": 1710774008000,
+      "runId": "run_specialist_code_001",
+      "sessionKey": "agent:slack:session_xyz789",
+      "stream": "tool",
+      "data": {
+        "phase": "tool_start",
+        "toolCallId": "toolu_02CODE01",
+        "toolName": "Grep",
+        "args": {
+          "pattern": "function.*export",
+          "path": "/workspace/src"
+        }
+      }
+    },
+    {
+      "type": "model.usage",
+      "seq": 8,
+      "ts": 1710774008200,
+      "runId": "run_specialist_docs_001",
+      "sessionKey": "agent:slack:session_xyz789",
+      "channel": "slack",
+      "model": "claude-sonnet-4",
+      "provider": "anthropic",
+      "tokens": {
+        "input": 1300,
+        "output": 520,
+        "cacheRead": 0,
+        "cacheWrite": 1000,
+        "total": 1820
+      },
+      "costUsd": 0.0072,
+      "durationMs": 3650,
+      "context": {
+        "limit": 200000,
+        "used": 1820
+      }
+    },
+    {
+      "type": "tool",
+      "seq": 5,
+      "ts": 1710774008400,
+      "runId": "run_specialist_docs_001",
+      "sessionKey": "agent:slack:session_xyz789",
+      "stream": "tool",
+      "data": {
+        "phase": "tool_start",
+        "toolCallId": "toolu_02DOCS01",
+        "toolName": "Read",
+        "args": {
+          "file_path": "/workspace/README.md"
+        }
+      }
+    },
+    {
+      "type": "tool",
+      "seq": 6,
+      "ts": 1710774010200,
+      "runId": "run_specialist_code_001",
+      "sessionKey": "agent:slack:session_xyz789",
+      "stream": "tool",
+      "data": {
+        "phase": "tool_end",
+        "toolCallId": "toolu_02CODE01",
+        "toolName": "Grep",
+        "durationMs": 2200
+      }
+    },
+    {
+      "type": "tool",
+      "seq": 7,
+      "ts": 1710774010250,
+      "runId": "run_specialist_code_001",
+      "sessionKey": "agent:slack:session_xyz789",
+      "stream": "tool",
+      "data": {
+        "phase": "tool_result",
+        "toolCallId": "toolu_02CODE01",
+        "toolName": "Grep",
+        "result": "[REDACTED]",
+        "isError": false
+      }
+    },
+    {
+      "type": "tool",
+      "seq": 8,
+      "ts": 1710774010100,
+      "runId": "run_specialist_docs_001",
+      "sessionKey": "agent:slack:session_xyz789",
+      "stream": "tool",
+      "data": {
+        "phase": "tool_end",
+        "toolCallId": "toolu_02DOCS01",
+        "toolName": "Read",
+        "durationMs": 1700
+      }
+    },
+    {
+      "type": "tool",
+      "seq": 9,
+      "ts": 1710774010150,
+      "runId": "run_specialist_docs_001",
+      "sessionKey": "agent:slack:session_xyz789",
+      "stream": "tool",
+      "data": {
+        "phase": "tool_result",
+        "toolCallId": "toolu_02DOCS01",
+        "toolName": "Read",
+        "result": "[REDACTED]",
+        "isError": false
+      }
+    },
+    {
+      "type": "model.usage",
+      "seq": 9,
+      "ts": 1710774014500,
+      "runId": "run_specialist_code_001",
+      "sessionKey": "agent:slack:session_xyz789",
+      "channel": "slack",
+      "model": "claude-sonnet-4",
+      "provider": "anthropic",
+      "tokens": {
+        "input": 2800,
+        "output": 420,
+        "cacheRead": 1200,
+        "cacheWrite": 0,
+        "total": 3220
+      },
+      "costUsd": 0.0056,
+      "durationMs": 4250,
+      "context": {
+        "limit": 200000,
+        "used": 5170
+      }
+    },
+    {
+      "type": "model.usage",
+      "seq": 10,
+      "ts": 1710774014800,
+      "runId": "run_specialist_docs_001",
+      "sessionKey": "agent:slack:session_xyz789",
+      "channel": "slack",
+      "model": "claude-sonnet-4",
+      "provider": "anthropic",
+      "tokens": {
+        "input": 2500,
+        "output": 380,
+        "cacheRead": 1000,
+        "cacheWrite": 0,
+        "total": 2880
+      },
+      "costUsd": 0.0048,
+      "durationMs": 4600,
+      "context": {
+        "limit": 200000,
+        "used": 4700
+      }
+    },
+    {
+      "type": "lifecycle",
+      "seq": 10,
+      "ts": 1710774018200,
+      "runId": "run_specialist_code_001",
+      "sessionKey": "agent:slack:session_xyz789",
+      "stream": "lifecycle",
+      "data": {
+        "phase": "end",
+        "endedAt": 1710774018200
+      }
+    },
+    {
+      "type": "lifecycle",
+      "seq": 11,
+      "ts": 1710774018500,
+      "runId": "run_specialist_docs_001",
+      "sessionKey": "agent:slack:session_xyz789",
+      "stream": "lifecycle",
+      "data": {
+        "phase": "end",
+        "endedAt": 1710774018500
+      }
+    },
+    {
+      "type": "model.usage",
+      "seq": 11,
+      "ts": 1710774024200,
+      "runId": "run_coordinator_001",
+      "sessionKey": "agent:slack:session_xyz789",
+      "channel": "slack",
+      "model": "claude-opus-4",
+      "provider": "anthropic",
+      "tokens": {
+        "input": 4200,
+        "output": 550,
+        "cacheRead": 1800,
+        "cacheWrite": 0,
+        "total": 4750
+      },
+      "costUsd": 0.0088,
+      "durationMs": 5700,
+      "context": {
+        "limit": 200000,
+        "used": 7630
+      }
+    },
+    {
+      "type": "lifecycle",
+      "seq": 12,
+      "ts": 1710774028400,
+      "runId": "run_coordinator_001",
+      "sessionKey": "agent:slack:session_xyz789",
+      "stream": "lifecycle",
+      "data": {
+        "phase": "end",
+        "endedAt": 1710774028400
+      }
+    },
+    {
+      "type": "session.state",
+      "seq": 12,
+      "ts": 1710774028500,
+      "sessionKey": "agent:slack:session_xyz789",
+      "prevState": "processing",
+      "state": "idle",
+      "reason": "run_completed",
+      "queueDepth": 0
+    },
+    {
+      "type": "message.processed",
+      "seq": 13,
+      "ts": 1710774028600,
+      "channel": "slack",
+      "sessionKey": "agent:slack:session_xyz789",
+      "outcome": "completed",
+      "durationMs": 28550,
+      "chatId": "chat_slack_C01ABC",
+      "messageId": "msg_slack_1234567890.123456"
+    },
+    {
+      "type": "webhook.processed",
+      "seq": 14,
+      "ts": 1710774028750,
+      "channel": "slack",
+      "updateType": "message",
+      "durationMs": 28750,
+      "chatId": "chat_slack_C01ABC"
+    }
+  ]
+}

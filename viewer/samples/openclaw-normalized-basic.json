@@ -1,0 +1,219 @@
+{
+  "trace_id": "openclaw_normalized_001",
+  "trace_name": "OpenClaw Basic Execution",
+  "start_at": "2026-03-18T14:30:00.000Z",
+  "end_at": "2026-03-18T14:30:12.450Z",
+  "spans": [
+    {
+      "record_id": "span_webhook_001",
+      "category": "WEBHOOK",
+      "subtype": "webhook.received",
+      "name": "Webhook: Discord Message",
+      "start_at": "2026-03-18T14:30:00.000Z",
+      "end_at": "2026-03-18T14:30:00.050Z",
+      "duration_ms": 50,
+      "status": "success",
+      "fidelity": "exact",
+      "channel": "discord",
+      "updateType": "message",
+      "seq": 1,
+      "attributes": {
+        "chatId": "chat_discord_123456"
+      }
+    },
+    {
+      "record_id": "span_message_001",
+      "category": "MESSAGE",
+      "subtype": "message.queued",
+      "name": "Message Queued",
+      "start_at": "2026-03-18T14:30:00.050Z",
+      "end_at": "2026-03-18T14:30:00.100Z",
+      "duration_ms": 50,
+      "status": "success",
+      "fidelity": "exact",
+      "channel": "discord",
+      "sessionKey": "agent:discord:session_abc123",
+      "queueDepth": 1,
+      "seq": 2,
+      "attributes": {
+        "source": "webhook"
+      }
+    },
+    {
+      "record_id": "span_session_001",
+      "category": "SESSION",
+      "subtype": "session.state",
+      "name": "Session: idle → processing",
+      "start_at": "2026-03-18T14:30:00.100Z",
+      "end_at": "2026-03-18T14:30:00.150Z",
+      "duration_ms": 50,
+      "status": "success",
+      "fidelity": "exact",
+      "sessionKey": "agent:discord:session_abc123",
+      "queueDepth": 1,
+      "seq": 3,
+      "attributes": {
+        "prevState": "idle",
+        "state": "processing",
+        "reason": "message_received"
+      }
+    },
+    {
+      "record_id": "span_run_001",
+      "category": "RUN",
+      "subtype": "lifecycle.start",
+      "name": "Agent Run Started",
+      "start_at": "2026-03-18T14:30:00.150Z",
+      "end_at": "2026-03-18T14:30:12.100Z",
+      "duration_ms": 11950,
+      "status": "success",
+      "fidelity": "exact",
+      "runId": "run_basic_001",
+      "sessionKey": "agent:discord:session_abc123",
+      "seq": 1,
+      "attributes": {
+        "phase": "start"
+      }
+    },
+    {
+      "record_id": "span_model_001",
+      "category": "MODEL",
+      "subtype": "model.usage",
+      "name": "Model: claude-opus-4",
+      "start_at": "2026-03-18T14:30:00.150Z",
+      "end_at": "2026-03-18T14:30:03.800Z",
+      "duration_ms": 3650,
+      "parent_span_id": "span_run_001",
+      "status": "success",
+      "fidelity": "exact",
+      "runId": "run_basic_001",
+      "sessionKey": "agent:discord:session_abc123",
+      "channel": "discord",
+      "model_name": "claude-opus-4",
+      "provider": "anthropic",
+      "token_input": 1450,
+      "token_output": 520,
+      "token_cache": 1200,
+      "costUsd": 0.0098,
+      "seq": 4,
+      "attributes": {
+        "cacheRead": 0,
+        "cacheWrite": 1200,
+        "contextLimit": 200000,
+        "contextUsed": 1970
+      }
+    },
+    {
+      "record_id": "span_tool_001",
+      "category": "TOOL",
+      "subtype": "tool_start",
+      "name": "Tool: Read",
+      "start_at": "2026-03-18T14:30:04.000Z",
+      "end_at": "2026-03-18T14:30:04.850Z",
+      "duration_ms": 850,
+      "parent_span_id": "span_run_001",
+      "status": "success",
+      "fidelity": "exact",
+      "runId": "run_basic_001",
+      "sessionKey": "agent:discord:session_abc123",
+      "tool_name": "Read",
+      "seq": 2,
+      "attributes": {
+        "toolCallId": "toolu_01ABC123",
+        "phase": "tool_start",
+        "args": {
+          "file_path": "/workspace/config.json"
+        }
+      }
+    },
+    {
+      "record_id": "span_model_002",
+      "category": "MODEL",
+      "subtype": "model.usage",
+      "name": "Model: claude-opus-4",
+      "start_at": "2026-03-18T14:30:04.900Z",
+      "end_at": "2026-03-18T14:30:08.200Z",
+      "duration_ms": 3300,
+      "parent_span_id": "span_run_001",
+      "status": "success",
+      "fidelity": "exact",
+      "runId": "run_basic_001",
+      "sessionKey": "agent:discord:session_abc123",
+      "channel": "discord",
+      "model_name": "claude-opus-4",
+      "provider": "anthropic",
+      "token_input": 2100,
+      "token_output": 380,
+      "token_cache": 1200,
+      "costUsd": 0.0058,
+      "seq": 5,
+      "attributes": {
+        "cacheRead": 1200,
+        "cacheWrite": 0,
+        "contextLimit": 200000,
+        "contextUsed": 2480
+      }
+    },
+    {
+      "record_id": "span_session_002",
+      "category": "SESSION",
+      "subtype": "session.state",
+      "name": "Session: processing → idle",
+      "start_at": "2026-03-18T14:30:12.100Z",
+      "end_at": "2026-03-18T14:30:12.150Z",
+      "duration_ms": 50,
+      "status": "success",
+      "fidelity": "exact",
+      "sessionKey": "agent:discord:session_abc123",
+      "queueDepth": 0,
+      "seq": 6,
+      "attributes": {
+        "prevState": "processing",
+        "state": "idle",
+        "reason": "run_completed"
+      }
+    },
+    {
+      "record_id": "span_message_002",
+      "category": "MESSAGE",
+      "subtype": "message.processed",
+      "name": "Message Processed",
+      "start_at": "2026-03-18T14:30:12.150Z",
+      "end_at": "2026-03-18T14:30:12.400Z",
+      "duration_ms": 250,
+      "status": "success",
+      "fidelity": "exact",
+      "channel": "discord",
+      "sessionKey": "agent:discord:session_abc123",
+      "seq": 7,
+      "attributes": {
+        "outcome": "completed",
+        "chatId": "chat_discord_123456",
+        "messageId": "msg_discord_789"
+      }
+    },
+    {
+      "record_id": "span_webhook_002",
+      "category": "WEBHOOK",
+      "subtype": "webhook.processed",
+      "name": "Webhook Processed",
+      "start_at": "2026-03-18T14:30:12.400Z",
+      "end_at": "2026-03-18T14:30:12.450Z",
+      "duration_ms": 50,
+      "status": "success",
+      "fidelity": "exact",
+      "channel": "discord",
+      "updateType": "message",
+      "seq": 8,
+      "attributes": {
+        "chatId": "chat_discord_123456"
+      }
+    }
+  ],
+  "summary": {
+    "total_duration_ms": 12450,
+    "total_cost": 0.0156,
+    "total_agents": 1,
+    "total_spans": 10
+  }
+}

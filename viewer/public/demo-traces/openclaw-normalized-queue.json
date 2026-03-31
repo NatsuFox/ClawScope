@@ -1,0 +1,245 @@
+{
+  "trace_id": "openclaw_queue_001",
+  "trace_name": "OpenClaw Queue Operations",
+  "start_at": "2026-03-18T15:00:00.000Z",
+  "end_at": "2026-03-18T15:00:05.500Z",
+  "spans": [
+    {
+      "record_id": "span_queue_001",
+      "category": "QUEUE",
+      "subtype": "queue.lane.enqueue",
+      "name": "Queue Enqueue: default",
+      "start_at": "2026-03-18T15:00:00.000Z",
+      "end_at": "2026-03-18T15:00:00.010Z",
+      "duration_ms": 10,
+      "status": "success",
+      "fidelity": "exact",
+      "lane": "default",
+      "queueDepth": 3,
+      "seq": 1,
+      "attributes": {
+        "queueSize": 3
+      }
+    },
+    {
+      "record_id": "span_queue_002",
+      "category": "QUEUE",
+      "subtype": "queue.lane.dequeue",
+      "name": "Queue Dequeue: default",
+      "start_at": "2026-03-18T15:00:00.500Z",
+      "end_at": "2026-03-18T15:00:00.520Z",
+      "duration_ms": 20,
+      "status": "success",
+      "fidelity": "exact",
+      "lane": "default",
+      "queueDepth": 2,
+      "seq": 2,
+      "attributes": {
+        "queueSize": 2,
+        "waitMs": 490
+      }
+    },
+    {
+      "record_id": "span_webhook_001",
+      "category": "WEBHOOK",
+      "subtype": "webhook.received",
+      "name": "Webhook: Telegram Update",
+      "start_at": "2026-03-18T15:00:01.000Z",
+      "end_at": "2026-03-18T15:00:01.050Z",
+      "duration_ms": 50,
+      "status": "success",
+      "fidelity": "exact",
+      "channel": "telegram",
+      "updateType": "message",
+      "seq": 3,
+      "attributes": {
+        "chatId": "chat_telegram_456789"
+      }
+    },
+    {
+      "record_id": "span_message_001",
+      "category": "MESSAGE",
+      "subtype": "message.queued",
+      "name": "Message Queued",
+      "start_at": "2026-03-18T15:00:01.050Z",
+      "end_at": "2026-03-18T15:00:01.100Z",
+      "duration_ms": 50,
+      "status": "success",
+      "fidelity": "exact",
+      "channel": "telegram",
+      "sessionKey": "agent:telegram:session_xyz789",
+      "queueDepth": 2,
+      "seq": 4,
+      "attributes": {
+        "source": "webhook"
+      }
+    },
+    {
+      "record_id": "span_session_001",
+      "category": "SESSION",
+      "subtype": "session.state",
+      "name": "Session: idle → processing",
+      "start_at": "2026-03-18T15:00:01.100Z",
+      "end_at": "2026-03-18T15:00:01.150Z",
+      "duration_ms": 50,
+      "status": "success",
+      "fidelity": "exact",
+      "sessionKey": "agent:telegram:session_xyz789",
+      "queueDepth": 2,
+      "seq": 5,
+      "attributes": {
+        "prevState": "idle",
+        "state": "processing",
+        "reason": "message_received"
+      }
+    },
+    {
+      "record_id": "span_run_001",
+      "category": "RUN",
+      "subtype": "run.attempt",
+      "name": "Run Attempt #1",
+      "start_at": "2026-03-18T15:00:01.150Z",
+      "end_at": "2026-03-18T15:00:05.000Z",
+      "duration_ms": 3850,
+      "status": "success",
+      "fidelity": "exact",
+      "runId": "run_queue_001",
+      "sessionKey": "agent:telegram:session_xyz789",
+      "seq": 1,
+      "attributes": {
+        "attempt": 1
+      }
+    },
+    {
+      "record_id": "span_model_001",
+      "category": "MODEL",
+      "subtype": "model.usage",
+      "name": "Model: claude-sonnet-4",
+      "start_at": "2026-03-18T15:00:01.200Z",
+      "end_at": "2026-03-18T15:00:03.800Z",
+      "duration_ms": 2600,
+      "parent_span_id": "span_run_001",
+      "status": "success",
+      "fidelity": "exact",
+      "runId": "run_queue_001",
+      "sessionKey": "agent:telegram:session_xyz789",
+      "channel": "telegram",
+      "model_name": "claude-sonnet-4",
+      "provider": "anthropic",
+      "token_input": 850,
+      "token_output": 320,
+      "token_cache": 600,
+      "costUsd": 0.0042,
+      "seq": 2,
+      "attributes": {
+        "cacheRead": 600,
+        "cacheWrite": 0,
+        "contextLimit": 200000,
+        "contextUsed": 1170
+      }
+    },
+    {
+      "record_id": "span_tool_001",
+      "category": "TOOL",
+      "subtype": "tool_start",
+      "name": "Tool: Bash",
+      "start_at": "2026-03-18T15:00:03.900Z",
+      "end_at": "2026-03-18T15:00:04.800Z",
+      "duration_ms": 900,
+      "parent_span_id": "span_run_001",
+      "status": "success",
+      "fidelity": "exact",
+      "runId": "run_queue_001",
+      "sessionKey": "agent:telegram:session_xyz789",
+      "tool_name": "Bash",
+      "seq": 3,
+      "attributes": {
+        "toolCallId": "toolu_02XYZ456",
+        "phase": "tool_start",
+        "args": {
+          "command": "ls -la"
+        }
+      }
+    },
+    {
+      "record_id": "span_context_001",
+      "category": "CONTEXT",
+      "subtype": "context.build",
+      "name": "Context Assembly",
+      "start_at": "2026-03-18T15:00:04.850Z",
+      "end_at": "2026-03-18T15:00:04.950Z",
+      "duration_ms": 100,
+      "parent_span_id": "span_run_001",
+      "status": "success",
+      "fidelity": "derived",
+      "runId": "run_queue_001",
+      "sessionKey": "agent:telegram:session_xyz789",
+      "seq": 4,
+      "attributes": {
+        "contextSize": 1170,
+        "contextLimit": 200000
+      }
+    },
+    {
+      "record_id": "span_session_002",
+      "category": "SESSION",
+      "subtype": "session.state",
+      "name": "Session: processing → idle",
+      "start_at": "2026-03-18T15:00:05.000Z",
+      "end_at": "2026-03-18T15:00:05.050Z",
+      "duration_ms": 50,
+      "status": "success",
+      "fidelity": "exact",
+      "sessionKey": "agent:telegram:session_xyz789",
+      "queueDepth": 1,
+      "seq": 6,
+      "attributes": {
+        "prevState": "processing",
+        "state": "idle",
+        "reason": "run_completed"
+      }
+    },
+    {
+      "record_id": "span_message_002",
+      "category": "MESSAGE",
+      "subtype": "message.processed",
+      "name": "Message Processed",
+      "start_at": "2026-03-18T15:00:05.050Z",
+      "end_at": "2026-03-18T15:00:05.300Z",
+      "duration_ms": 250,
+      "status": "success",
+      "fidelity": "exact",
+      "channel": "telegram",
+      "sessionKey": "agent:telegram:session_xyz789",
+      "seq": 7,
+      "attributes": {
+        "outcome": "completed",
+        "chatId": "chat_telegram_456789",
+        "messageId": "msg_telegram_012"
+      }
+    },
+    {
+      "record_id": "span_webhook_002",
+      "category": "WEBHOOK",
+      "subtype": "webhook.processed",
+      "name": "Webhook Processed",
+      "start_at": "2026-03-18T15:00:05.300Z",
+      "end_at": "2026-03-18T15:00:05.500Z",
+      "duration_ms": 200,
+      "status": "success",
+      "fidelity": "exact",
+      "channel": "telegram",
+      "updateType": "message",
+      "seq": 8,
+      "attributes": {
+        "chatId": "chat_telegram_456789"
+      }
+    }
+  ],
+  "summary": {
+    "total_duration_ms": 5500,
+    "total_cost": 0.0042,
+    "total_agents": 1,
+    "total_spans": 12
+  }
+}

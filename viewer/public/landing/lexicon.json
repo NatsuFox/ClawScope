@@ -1,0 +1,672 @@
+{
+  "en": {
+    "document": {
+      "title": "ClawScope Landing Demo"
+    },
+    "localeToggle": {
+      "groupLabel": "Language selector",
+      "english": "EN",
+      "chinese": "中文"
+    },
+    "page": {
+      "brandName": "ClawScope",
+      "brandTagline": "Replay-first agent profiling",
+      "brandHomeAria": "ClawScope landing home",
+      "navAria": "ClawScope landing sections",
+      "navPriorities": "Priorities",
+      "navFeatures": "Features",
+      "navDemo": "Demo",
+      "navDebugger": "Backend Debugger",
+      "heroEyebrow": "Local-first agent profiler",
+      "heroTitle": "See where an agent spent time, cost, and coordination effort.",
+      "heroLead": "ClawScope brings OpenClaw, Claude Code, and Codex traces into one replay-first debugger for practical investigation.",
+      "heroPrimaryAction": "Open demo studio",
+      "heroSecondaryAction": "Open backend debugger",
+      "heroStats": [
+        {
+          "value": "3 runtimes",
+          "label": "OpenClaw, Claude Code, Codex"
+        },
+        {
+          "value": "Replay-first",
+          "label": "Saved traces before live complexity"
+        },
+        {
+          "value": "Waterfall + multi-agent",
+          "label": "Two core analysis views"
+        }
+      ],
+      "heroHighlights": [
+        "Normalize multiple runtimes into one viewer contract.",
+        "Keep time, cost, and actor structure visible together.",
+        "Inspect traces locally without cloud dependence.",
+        "Move from demo replay to real database-backed debugging quickly."
+      ],
+      "sideEyebrow": "Project priorities",
+      "sideTitle": "Build the debugger around stable evidence, not retrospective storytelling.",
+      "priorities": [
+        {
+          "title": "Replay-first",
+          "body": "Start from persisted traces so the product proves reconstruction before live streaming."
+        },
+        {
+          "title": "Local-first",
+          "body": "Keep sensitive traces inspectable on the local machine, with no dashboard dependency."
+        },
+        {
+          "title": "Contract-first",
+          "body": "Separate raw evidence, normalized model, and derived interpretation with hard boundaries."
+        },
+        {
+          "title": "Waterfall-first",
+          "body": "Prioritize debugging questions about order, waiting, overlap, and spend before secondary analytics."
+        }
+      ],
+      "workflowEyebrow": "Operator workflow",
+      "workflowTitle": "Move from local artifacts to evidence-backed inspection.",
+      "workflowSteps": [
+        {
+          "label": "01",
+          "title": "Collect",
+          "body": "Import local artifacts from supported runtimes."
+        },
+        {
+          "label": "02",
+          "title": "Normalize",
+          "body": "Map them into a shared trace contract."
+        },
+        {
+          "label": "03",
+          "title": "Inspect",
+          "body": "Use synchronized waterfall and multi-agent views."
+        },
+        {
+          "label": "04",
+          "title": "Trace back",
+          "body": "Keep every summary tied to the underlying evidence."
+        }
+      ],
+      "featureEyebrow": "Core features",
+      "featureTitle": "Show the product through the actions it supports.",
+      "featureLead": "The landing page should surface the product’s real operating model quickly: import, inspect, compare, and understand why the run behaved that way.",
+      "features": [
+        {
+          "title": "Unified trace intake",
+          "body": "Bring OpenClaw, Claude Code, and Codex sessions into one viewer path instead of separate tools."
+        },
+        {
+          "title": "Synchronized waterfall",
+          "body": "Keep chat/activity logs and the vertical waterfall in sync so sequence and focus stay legible."
+        },
+        {
+          "title": "Integrated multi-agent analysis",
+          "body": "Switch into actor swimlanes and delegation structure inside the same debugger when the trace supports it."
+        },
+        {
+          "title": "Focused derived insight",
+          "body": "Summaries help navigation, but they never replace the normalized trace as source truth."
+        }
+      ],
+      "statusEyebrow": "Project status",
+      "statusTitle": "The replay debugger is ready; live synchronization is the next expansion point.",
+      "statusLead": "Phase 3 established the product baseline: collector pipeline, normalized storage, demo landing, and server-backed debugger.",
+      "deliveryPhases": [
+        {
+          "label": "Phase 0",
+          "state": "complete",
+          "title": "Documentation foundation"
+        },
+        {
+          "label": "Phase 1",
+          "state": "complete",
+          "title": "OpenClaw alignment"
+        },
+        {
+          "label": "Phase 2",
+          "state": "complete",
+          "title": "Trace model and storage MVP"
+        },
+        {
+          "label": "Phase 3",
+          "state": "complete",
+          "title": "Replay visualization MVP"
+        },
+        {
+          "label": "Phase 4",
+          "state": "pending",
+          "title": "Live collection and synchronization"
+        },
+        {
+          "label": "Phase 5",
+          "state": "pending",
+          "title": "Advanced derived analysis"
+        }
+      ],
+      "phaseComplete": "Complete",
+      "phasePending": "Next",
+      "studioEyebrow": "Demo studio",
+      "studioTitle": "Use the landing page to replay bundled traces, then move into the backend debugger for real work.",
+      "studioLead": "The landing surface is for product framing and quick replay. The operational surface remains the backend debugger with database-backed traces.",
+      "demoBadge": "Demo surface",
+      "demoModeTitle": "Bundled replay traces run directly in the shared viewer shell.",
+      "demoModeBody": "This page is for orientation and lightweight replay. Open the backend debugger when you want stored traces, integrated multi-agent analysis, and day-to-day investigation.",
+      "demoModeLink": "Open backend debugger"
+    },
+    "traceStudio": {
+      "unknownHarness": "Unknown Harness",
+      "unknown": "Unknown",
+      "delegated": "Delegation-aware",
+      "multiActor": "Multi-actor",
+      "singleActor": "Single-actor",
+      "multiRun": "Multi-run",
+      "singleRun": "Single-run",
+      "multiSession": "Multi-session",
+      "sessionScoped": "Session-scoped",
+      "spanOnly": "Span-only",
+      "explicitAgentIds": "Explicit agent ids",
+      "runIdsOnly": "Run ids only",
+      "sessionIdsOnly": "Session ids only",
+      "noActorIdentity": "No actor identity",
+      "loading": "Loading",
+      "viewerIssue": "Viewer issue",
+      "needsFreshSource": "The trace studio needs a fresh source.",
+      "retryCurrentSource": "Retry current source",
+      "switchTo": "Switch to {mode}",
+      "trace": "Trace",
+      "source": "Source",
+      "semantics": "Semantics",
+      "actorIdentity": "Actor identity",
+      "multiAgent": "Multi-agent",
+      "available": "available",
+      "unavailable": "not available",
+      "visibleSpans": "Visible spans",
+      "storedTraces": "Stored traces",
+      "traceSource": "Trace source",
+      "currentOperatingStance": "Current operating stance",
+      "primarySurface": "Primary debugging surface",
+      "primaryDeliveryPath": "Primary delivery path",
+      "bundledDemo": "Bundled demo",
+      "databaseTrace": "Database trace",
+      "backendFirst": "Backend-first",
+      "demoFirst": "Demo-first",
+      "waterfall": "Waterfall",
+      "serverBacked": "Server-backed",
+      "frontendAsset": "Frontend asset",
+      "viewLabel": "View",
+      "traceIdentity": "Trace identity",
+      "synchronizedView": "Synchronized log",
+      "synchronizedBody": "Keep the chat/activity log synchronized with the vertical waterfall overview.",
+      "multiAgentView": "Multi-agent",
+      "multiAgentBody": "Inspect actor swimlanes and delegation structure inside the same debugger surface.",
+      "synchronizedHeading": "Synchronized Trace View",
+      "multiAgentHeading": "Integrated Multi-Agent View",
+      "chooseDemoTrace": "Choose demo trace",
+      "chooseStoredTrace": "Choose stored trace",
+      "uploadTrace": "Upload JSON trace",
+      "noStoredTraces": "No stored traces available",
+      "loadedTrace": "Loaded trace",
+      "currentSource": "Current source",
+      "harnessOpenClaw": "OpenClaw",
+      "harnessClaudeCode": "Claude Code",
+      "harnessCodex": "Codex",
+      "sampleToggleLabel": "Demo traces",
+      "databaseToggleLabel": "Database",
+      "loadingTitle": "Collecting trace context for the studio.",
+      "loadingBody": "The demo surface is loading a bundled replay trace.",
+      "emptyLabel": "Demo replay",
+      "emptyTitle": "No bundled demo trace is selected.",
+      "emptyBody": "Choose one of the shipped frontend trace assets to replay the viewer directly from the landing page.",
+      "loadDatabaseTracesError": "Failed to load database traces",
+      "loadTraceError": "Failed to load trace",
+      "loadSampleTraceError": "Failed to load sample trace",
+      "parseTraceFileError": "Failed to parse trace file"
+    },
+    "demoTraces": {
+      "openclawNormalizedBasic": "Demo: OpenClaw normalized basic",
+      "openclawNormalizedQueue": "Demo: OpenClaw queue pressure",
+      "integratedMultiAgentReplay": "Demo: Integrated multi-agent replay"
+    },
+    "summaryPanel": {
+      "title": "Summary",
+      "subtitle": "Start with scope, cost, and obvious bottlenecks.",
+      "totalDuration": "Total duration",
+      "totalCost": "Total cost",
+      "totalSpans": "Total spans",
+      "slowest": "Slowest spans",
+      "costliest": "Costliest spans",
+      "byCategory": "Categories"
+    },
+    "filterPanel": {
+      "title": "Filters",
+      "subtitle": "Reduce the trace before you inspect details.",
+      "clearAll": "Clear all",
+      "search": "Search",
+      "searchPlaceholder": "Search spans by name, category, or actor...",
+      "categories": "Categories",
+      "actors": "Actors",
+      "showMore": "Show {count} more",
+      "hideMore": "Hide {count}",
+      "hiddenSelected": "{count} selected in collapsed actors",
+      "collapsedHint": "The first ten actors stay visible; the rest stay collapsed."
+    },
+    "spanDetailModal": {
+      "labels": {
+        "recordId": "Record ID",
+        "status": "Status",
+        "duration": "Duration",
+        "costUsd": "Cost (USD)",
+        "startTime": "Start Time",
+        "endTime": "End Time",
+        "runId": "Run ID",
+        "sessionKey": "Session Key",
+        "sequence": "Sequence",
+        "channel": "Channel",
+        "lane": "Lane",
+        "updateType": "Update Type",
+        "agentId": "Agent ID",
+        "parentSpan": "Parent Span",
+        "model": "Model",
+        "provider": "Provider",
+        "tool": "Tool",
+        "inputTokens": "Input Tokens",
+        "outputTokens": "Output Tokens",
+        "cacheTokens": "Cache Tokens",
+        "queueDepth": "Queue Depth",
+        "originAgent": "Origin Agent",
+        "targetAgent": "Target Agent",
+        "fidelity": "Fidelity",
+        "additionalAttributes": "Additional Attributes"
+      }
+    },
+    "multiAgentTraceView": {
+      "overview": "Multi-agent view",
+      "intro": "Swimlanes and actor relationships are now part of the debugger instead of a separate prototype page.",
+      "actorStats": "Actors",
+      "visibleSpans": "Visible spans",
+      "activeFilter": "View filter",
+      "actorDirectory": "Actor directory",
+      "actorDirectoryHint": "Select an actor to isolate its swimlane. Double-click a segment to open full span details.",
+      "allActors": "All actors",
+      "colorMode": "Color mode",
+      "colorByCategory": "Category",
+      "colorByActor": "Actor",
+      "filterMode": "Span filter",
+      "filterAll": "All",
+      "filterModel": "Model",
+      "filterTool": "Tool",
+      "filterAgent": "Agent",
+      "actorTimeline": "Actor swimlanes",
+      "noSignals": "This trace does not expose enough actor structure for the multi-agent view.",
+      "noSpans": "No spans remain after the current filters.",
+      "unnamedActor": "Unnamed actor",
+      "unknownActor": "Unknown actor",
+      "sessionEnvelope": "Session envelope",
+      "spanCount": "{count} spans",
+      "axisStart": "Start",
+      "axisEnd": "End",
+      "hierarchyUnavailable": "No explicit parent/child delegation edges were preserved in this trace."
+    },
+    "synchronizedTraceView": {
+      "user": "User",
+      "agent": "Agent",
+      "detail": "Detail",
+      "raw": "Raw",
+      "markdown": "Markdown",
+      "expand": "Expand",
+      "collapse": "Collapse",
+      "tool": "Tool",
+      "args": "Args",
+      "input": "Input",
+      "output": "Output",
+      "result": "Result",
+      "model": "Model",
+      "provider": "Provider",
+      "reasoning": "Reasoning",
+      "inputTokens": "Input",
+      "outputTokens": "Output",
+      "cacheTokens": "Cache",
+      "cost": "Cost",
+      "tok": "tok",
+      "verticalWaterfall": "Vertical Waterfall",
+      "verticalWaterfallBody": "Fixed overview of all events. The centered band tracks the visible log window and the bright line marks the active event.",
+      "chatActivity": "Chat / Activity Log",
+      "noSpans": "No spans available for synchronized trace view.",
+      "timeRangeSeparator": "to"
+    }
+  },
+  "zh": {
+    "document": {
+      "title": "ClawScope 着陆页演示"
+    },
+    "localeToggle": {
+      "groupLabel": "语言切换",
+      "english": "EN",
+      "chinese": "中文"
+    },
+    "page": {
+      "brandName": "ClawScope",
+      "brandTagline": "Replay-first Agent Profiling",
+      "brandHomeAria": "ClawScope 着陆页主页",
+      "navAria": "ClawScope 着陆页分区",
+      "navPriorities": "优先级",
+      "navFeatures": "功能",
+      "navDemo": "演示",
+      "navDebugger": "后端调试器",
+      "heroEyebrow": "Local-first Agent Profiler",
+      "heroTitle": "看清一个 Agent 把时间、成本和协作精力花在了哪里。",
+      "heroLead": "ClawScope 将 OpenClaw、Claude Code 和 Codex 的追踪统一到同一个 replay-first 调试器里，服务于真实排查。",
+      "heroPrimaryAction": "打开演示 Studio",
+      "heroSecondaryAction": "打开后端调试器",
+      "heroStats": [
+        {
+          "value": "3 个运行时",
+          "label": "OpenClaw、Claude Code、Codex"
+        },
+        {
+          "value": "Replay-first",
+          "label": "先证明保存追踪的重建能力"
+        },
+        {
+          "value": "瀑布图 + 多 Agent",
+          "label": "两个核心分析视图"
+        }
+      ],
+      "heroHighlights": [
+        "把多个运行时统一到同一个 viewer contract。",
+        "同时保留时间、成本与参与者结构。",
+        "在本地检查追踪，不依赖云端仪表盘。",
+        "从演示回放快速切换到数据库驱动的真实调试。"
+      ],
+      "sideEyebrow": "项目优先级",
+      "sideTitle": "调试器必须建立在稳定证据之上，而不是事后故事化解释。",
+      "priorities": [
+        {
+          "title": "Replay-first",
+          "body": "先从已保存追踪开始，先证明可重建性，再承接 live streaming。"
+        },
+        {
+          "title": "Local-first",
+          "body": "敏感追踪应可在本机直接检查，不依赖外部 dashboard。"
+        },
+        {
+          "title": "Contract-first",
+          "body": "Raw evidence、normalized model 和 derived interpretation 之间必须有硬边界。"
+        },
+        {
+          "title": "Waterfall-first",
+          "body": "先回答顺序、等待、重叠和成本问题，再扩展到次级分析能力。"
+        }
+      ],
+      "workflowEyebrow": "操作流程",
+      "workflowTitle": "从本地产物进入基于证据的检查。",
+      "workflowSteps": [
+        {
+          "label": "01",
+          "title": "采集",
+          "body": "导入受支持运行时的本地产物。"
+        },
+        {
+          "label": "02",
+          "title": "规范化",
+          "body": "映射到统一 trace contract。"
+        },
+        {
+          "label": "03",
+          "title": "检查",
+          "body": "使用同步瀑布图与多 Agent 视图。"
+        },
+        {
+          "label": "04",
+          "title": "回溯",
+          "body": "让每个摘要都能回到原始证据。"
+        }
+      ],
+      "featureEyebrow": "核心功能",
+      "featureTitle": "通过产品真正支持的动作来展示它。",
+      "featureLead": "Landing 页面应该让用户很快看懂产品的真实工作方式：导入、检查、比较，并理解运行为什么会这样发生。",
+      "features": [
+        {
+          "title": "统一追踪入口",
+          "body": "把 OpenClaw、Claude Code 与 Codex 会话汇总到同一个 viewer 路径，而不是拆成多套工具。"
+        },
+        {
+          "title": "同步瀑布图",
+          "body": "让聊天/活动日志与垂直瀑布图保持同步，确保顺序和焦点始终清楚。"
+        },
+        {
+          "title": "整合式多 Agent 分析",
+          "body": "当追踪支持参与者结构时，可在同一个调试器里切换到泳道与委派关系视图。"
+        },
+        {
+          "title": "克制的派生分析",
+          "body": "摘要只负责帮助导航，不替代规范化追踪本身作为 source truth。"
+        }
+      ],
+      "statusEyebrow": "项目状态",
+      "statusTitle": "回放型调试器已经就绪，下一步是 live 同步能力。",
+      "statusLead": "Phase 3 已经建立了当前产品基线：collector pipeline、normalized storage、demo landing，以及后端调试器。",
+      "deliveryPhases": [
+        {
+          "label": "Phase 0",
+          "state": "complete",
+          "title": "文档基础建设"
+        },
+        {
+          "label": "Phase 1",
+          "state": "complete",
+          "title": "OpenClaw 对齐"
+        },
+        {
+          "label": "Phase 2",
+          "state": "complete",
+          "title": "Trace model 与 storage MVP"
+        },
+        {
+          "label": "Phase 3",
+          "state": "complete",
+          "title": "Replay visualization MVP"
+        },
+        {
+          "label": "Phase 4",
+          "state": "pending",
+          "title": "Live collection 与同步"
+        },
+        {
+          "label": "Phase 5",
+          "state": "pending",
+          "title": "高级派生分析"
+        }
+      ],
+      "phaseComplete": "已完成",
+      "phasePending": "下一步",
+      "studioEyebrow": "演示 Studio",
+      "studioTitle": "先在 Landing 页面回放内置追踪，再进入后端调试器处理真实工作。",
+      "studioLead": "Landing 页面负责产品表达和轻量回放。真正的操作界面仍然是基于数据库追踪的后端调试器。",
+      "demoBadge": "演示界面",
+      "demoModeTitle": "内置回放追踪直接运行在同一套 viewer shell 上。",
+      "demoModeBody": "这个页面用于快速理解产品和体验轻量回放。需要已存储追踪、整合式多 Agent 分析和日常排查时，请打开后端调试器。",
+      "demoModeLink": "打开后端调试器"
+    },
+    "traceStudio": {
+      "unknownHarness": "未知采集器",
+      "unknown": "未知",
+      "delegated": "具备委派语义",
+      "multiActor": "多参与者",
+      "singleActor": "单参与者",
+      "multiRun": "多运行",
+      "singleRun": "单运行",
+      "multiSession": "多会话",
+      "sessionScoped": "会话范围",
+      "spanOnly": "仅 span",
+      "explicitAgentIds": "显式 Agent ID",
+      "runIdsOnly": "仅有 Run ID",
+      "sessionIdsOnly": "仅有 Session ID",
+      "noActorIdentity": "没有参与者身份信息",
+      "loading": "加载中",
+      "viewerIssue": "视图问题",
+      "needsFreshSource": "Trace Studio 需要重新连接一个可用来源。",
+      "retryCurrentSource": "重试当前来源",
+      "switchTo": "切换到 {mode}",
+      "trace": "追踪",
+      "source": "来源",
+      "semantics": "语义",
+      "actorIdentity": "参与者标识",
+      "multiAgent": "多 Agent",
+      "available": "可用",
+      "unavailable": "不可用",
+      "visibleSpans": "可见片段",
+      "storedTraces": "已存储追踪",
+      "traceSource": "追踪来源",
+      "currentOperatingStance": "当前工作姿态",
+      "primarySurface": "主要调试界面",
+      "primaryDeliveryPath": "主要交付路径",
+      "bundledDemo": "内置演示",
+      "databaseTrace": "数据库追踪",
+      "backendFirst": "后端优先",
+      "demoFirst": "演示优先",
+      "waterfall": "瀑布图",
+      "serverBacked": "服务端支持",
+      "frontendAsset": "前端资源",
+      "viewLabel": "视图",
+      "traceIdentity": "追踪身份",
+      "synchronizedView": "同步日志",
+      "synchronizedBody": "保持聊天/活动日志与右侧垂直瀑布图同步。",
+      "multiAgentView": "多 Agent",
+      "multiAgentBody": "在同一个调试器内检查参与者泳道和委派结构。",
+      "synchronizedHeading": "同步追踪视图",
+      "multiAgentHeading": "整合后的多 Agent 视图",
+      "chooseDemoTrace": "选择演示追踪",
+      "chooseStoredTrace": "选择已存储追踪",
+      "uploadTrace": "上传 JSON 追踪",
+      "noStoredTraces": "当前没有可用的已存储追踪",
+      "loadedTrace": "当前追踪",
+      "currentSource": "当前来源",
+      "harnessOpenClaw": "OpenClaw",
+      "harnessClaudeCode": "Claude Code",
+      "harnessCodex": "Codex",
+      "sampleToggleLabel": "演示追踪",
+      "databaseToggleLabel": "数据库",
+      "loadingTitle": "正在为 Studio 收集追踪上下文。",
+      "loadingBody": "演示界面正在加载内置回放追踪。",
+      "emptyLabel": "演示回放",
+      "emptyTitle": "当前没有选中的内置演示追踪。",
+      "emptyBody": "请选择一个随包提供的前端追踪资源，直接在 Landing 页面回放 viewer。",
+      "loadDatabaseTracesError": "加载数据库追踪失败",
+      "loadTraceError": "加载追踪失败",
+      "loadSampleTraceError": "加载演示追踪失败",
+      "parseTraceFileError": "解析追踪文件失败"
+    },
+    "demoTraces": {
+      "openclawNormalizedBasic": "演示：OpenClaw 基础规范化追踪",
+      "openclawNormalizedQueue": "演示：OpenClaw 队列压力",
+      "integratedMultiAgentReplay": "演示：整合后的多 Agent 回放"
+    },
+    "summaryPanel": {
+      "title": "摘要",
+      "subtitle": "先看范围、成本，以及最明显的瓶颈。",
+      "totalDuration": "总时长",
+      "totalCost": "总成本",
+      "totalSpans": "总片段数",
+      "slowest": "最慢片段",
+      "costliest": "最高成本片段",
+      "byCategory": "类别分布"
+    },
+    "filterPanel": {
+      "title": "过滤",
+      "subtitle": "先缩小追踪范围，再查看细节。",
+      "clearAll": "清空",
+      "search": "搜索",
+      "searchPlaceholder": "按名称、类别或参与者搜索片段...",
+      "categories": "类别",
+      "actors": "参与者",
+      "showMore": "展开另外 {count} 个",
+      "hideMore": "收起 {count} 个",
+      "hiddenSelected": "折叠区里已选择 {count} 个参与者",
+      "collapsedHint": "默认只展开前十个参与者，其余保持折叠。"
+    },
+    "spanDetailModal": {
+      "labels": {
+        "recordId": "记录 ID",
+        "status": "状态",
+        "duration": "持续时间",
+        "costUsd": "成本（USD）",
+        "startTime": "开始时间",
+        "endTime": "结束时间",
+        "runId": "Run ID",
+        "sessionKey": "Session Key",
+        "sequence": "序号",
+        "channel": "通道",
+        "lane": "泳道",
+        "updateType": "更新类型",
+        "agentId": "Agent ID",
+        "parentSpan": "父 Span",
+        "model": "模型",
+        "provider": "提供方",
+        "tool": "工具",
+        "inputTokens": "输入 Tokens",
+        "outputTokens": "输出 Tokens",
+        "cacheTokens": "缓存 Tokens",
+        "queueDepth": "队列深度",
+        "originAgent": "来源 Agent",
+        "targetAgent": "目标 Agent",
+        "fidelity": "保真度",
+        "additionalAttributes": "附加属性"
+      }
+    },
+    "multiAgentTraceView": {
+      "overview": "多 Agent 视图",
+      "intro": "泳道与参与者关系现已并入调试器主界面，不再保留独立原型页。",
+      "actorStats": "参与者",
+      "visibleSpans": "可见片段",
+      "activeFilter": "当前过滤",
+      "actorDirectory": "参与者目录",
+      "actorDirectoryHint": "点击参与者可只看该泳道；双击时间段可打开完整详情。",
+      "allActors": "全部参与者",
+      "colorMode": "着色方式",
+      "colorByCategory": "按类别",
+      "colorByActor": "按参与者",
+      "filterMode": "片段过滤",
+      "filterAll": "全部",
+      "filterModel": "模型",
+      "filterTool": "工具",
+      "filterAgent": "Agent",
+      "actorTimeline": "参与者泳道",
+      "noSignals": "当前追踪没有足够的参与者结构信号，无法启用多 Agent 视图。",
+      "noSpans": "在当前过滤条件下没有剩余片段。",
+      "unnamedActor": "未命名参与者",
+      "unknownActor": "未知参与者",
+      "sessionEnvelope": "会话外层事件",
+      "spanCount": "{count} 个片段",
+      "axisStart": "开始",
+      "axisEnd": "结束",
+      "hierarchyUnavailable": "该追踪未保留明确的父子委派关系，因此这里只显示扁平参与者列表。"
+    },
+    "synchronizedTraceView": {
+      "user": "用户",
+      "agent": "Agent",
+      "detail": "详情",
+      "raw": "原始",
+      "markdown": "Markdown",
+      "expand": "展开",
+      "collapse": "收起",
+      "tool": "工具",
+      "args": "参数",
+      "input": "输入",
+      "output": "输出",
+      "result": "结果",
+      "model": "模型",
+      "provider": "提供方",
+      "reasoning": "思考",
+      "inputTokens": "输入",
+      "outputTokens": "输出",
+      "cacheTokens": "缓存",
+      "cost": "成本",
+      "tok": "tok",
+      "verticalWaterfall": "垂直瀑布图",
+      "verticalWaterfallBody": "固定显示所有事件的整体概览。中间高亮带表示当前可见日志窗口，亮线表示当前聚焦事件。",
+      "chatActivity": "聊天 / 活动日志",
+      "noSpans": "当前没有可用于同步追踪视图的片段。",
+      "timeRangeSeparator": "至"
+    }
+  }
+}

@@ -1,0 +1,257 @@
+{
+  "metadata": {
+    "trace_id": "trace_error_001",
+    "description": "Error handling scenario with tool failures and session stuck detection",
+    "start_time": "2026-03-18T16:15:00.000Z",
+    "end_time": "2026-03-18T16:15:18.900Z",
+    "total_duration_ms": 18900,
+    "total_cost_usd": 0.0234,
+    "agent_count": 1,
+    "error_count": 3
+  },
+  "events": [
+    {
+      "type": "webhook.received",
+      "seq": 1,
+      "ts": 1710778500000,
+      "channel": "telegram",
+      "updateType": "message",
+      "chatId": "chat_telegram_987654"
+    },
+    {
+      "type": "message.queued",
+      "seq": 2,
+      "ts": 1710778500050,
+      "channel": "telegram",
+      "source": "webhook",
+      "queueDepth": 2,
+      "sessionKey": "agent:telegram:session_err123"
+    },
+    {
+      "type": "session.state",
+      "seq": 3,
+      "ts": 1710778500100,
+      "sessionKey": "agent:telegram:session_err123",
+      "prevState": "waiting",
+      "state": "processing",
+      "reason": "message_received",
+      "queueDepth": 2
+    },
+    {
+      "type": "lifecycle",
+      "seq": 1,
+      "ts": 1710778500150,
+      "runId": "run_error_001",
+      "sessionKey": "agent:telegram:session_err123",
+      "stream": "lifecycle",
+      "data": {
+        "phase": "start",
+        "startedAt": 1710778500150
+      }
+    },
+    {
+      "type": "model.usage",
+      "seq": 4,
+      "ts": 1710778503900,
+      "runId": "run_error_001",
+      "sessionKey": "agent:telegram:session_err123",
+      "channel": "telegram",
+      "model": "claude-opus-4",
+      "provider": "anthropic",
+      "tokens": {
+        "input": 1800,
+        "output": 480,
+        "cacheRead": 0,
+        "cacheWrite": 1500,
+        "total": 2280
+      },
+      "costUsd": 0.0112,
+      "durationMs": 3750,
+      "context": {
+        "limit": 200000,
+        "used": 2280
+      }
+    },
+    {
+      "type": "tool",
+      "seq": 2,
+      "ts": 1710778504100,
+      "runId": "run_error_001",
+      "sessionKey": "agent:telegram:session_err123",
+      "stream": "tool",
+      "data": {
+        "phase": "tool_start",
+        "toolCallId": "toolu_03ERR01",
+        "toolName": "Bash",
+        "args": {
+          "command": "npm install nonexistent-package"
+        }
+      }
+    },
+    {
+      "type": "tool",
+      "seq": 3,
+      "ts": 1710778506800,
+      "runId": "run_error_001",
+      "sessionKey": "agent:telegram:session_err123",
+      "stream": "tool",
+      "data": {
+        "phase": "tool_end",
+        "toolCallId": "toolu_03ERR01",
+        "toolName": "Bash",
+        "durationMs": 2700
+      }
+    },
+    {
+      "type": "tool",
+      "seq": 4,
+      "ts": 1710778506850,
+      "runId": "run_error_001",
+      "sessionKey": "agent:telegram:session_err123",
+      "stream": "tool",
+      "data": {
+        "phase": "tool_result",
+        "toolCallId": "toolu_03ERR01",
+        "toolName": "Bash",
+        "result": "[REDACTED]",
+        "isError": true,
+        "errorMessage": "npm ERR! 404 Not Found - GET https://registry.npmjs.org/nonexistent-package"
+      }
+    },
+    {
+      "type": "tool.loop",
+      "seq": 5,
+      "ts": 1710778507000,
+      "runId": "run_error_001",
+      "sessionKey": "agent:telegram:session_err123",
+      "toolName": "Bash",
+      "level": "warning",
+      "action": "continue",
+      "detector": "sequential",
+      "count": 2
+    },
+    {
+      "type": "model.usage",
+      "seq": 6,
+      "ts": 1710778510200,
+      "runId": "run_error_001",
+      "sessionKey": "agent:telegram:session_err123",
+      "channel": "telegram",
+      "model": "claude-opus-4",
+      "provider": "anthropic",
+      "tokens": {
+        "input": 3100,
+        "output": 420,
+        "cacheRead": 1500,
+        "cacheWrite": 0,
+        "total": 3520
+      },
+      "costUsd": 0.0078,
+      "durationMs": 3300,
+      "context": {
+        "limit": 200000,
+        "used": 5800
+      }
+    },
+    {
+      "type": "session.stuck",
+      "seq": 7,
+      "ts": 1710778512000,
+      "sessionKey": "agent:telegram:session_err123",
+      "state": "processing",
+      "ageMs": 11850,
+      "queueDepth": 2
+    },
+    {
+      "type": "tool",
+      "seq": 5,
+      "ts": 1710778510500,
+      "runId": "run_error_001",
+      "sessionKey": "agent:telegram:session_err123",
+      "stream": "tool",
+      "data": {
+        "phase": "tool_start",
+        "toolCallId": "toolu_03ERR02",
+        "toolName": "Read",
+        "args": {
+          "file_path": "/nonexistent/path/file.txt"
+        }
+      }
+    },
+    {
+      "type": "tool",
+      "seq": 6,
+      "ts": 1710778510650,
+      "runId": "run_error_001",
+      "sessionKey": "agent:telegram:session_err123",
+      "stream": "tool",
+      "data": {
+        "phase": "tool_end",
+        "toolCallId": "toolu_03ERR02",
+        "toolName": "Read",
+        "durationMs": 150
+      }
+    },
+    {
+      "type": "tool",
+      "seq": 7,
+      "ts": 1710778510700,
+      "runId": "run_error_001",
+      "sessionKey": "agent:telegram:session_err123",
+      "stream": "tool",
+      "data": {
+        "phase": "tool_result",
+        "toolCallId": "toolu_03ERR02",
+        "toolName": "Read",
+        "result": null,
+        "isError": true,
+        "errorMessage": "ENOENT: no such file or directory, open '/nonexistent/path/file.txt'"
+      }
+    },
+    {
+      "type": "lifecycle",
+      "seq": 8,
+      "ts": 1710778518500,
+      "runId": "run_error_001",
+      "sessionKey": "agent:telegram:session_err123",
+      "stream": "lifecycle",
+      "data": {
+        "phase": "error",
+        "error": "Agent execution failed after multiple tool errors",
+        "endedAt": 1710778518500
+      }
+    },
+    {
+      "type": "session.state",
+      "seq": 8,
+      "ts": 1710778518600,
+      "sessionKey": "agent:telegram:session_err123",
+      "prevState": "processing",
+      "state": "idle",
+      "reason": "run_error",
+      "queueDepth": 1
+    },
+    {
+      "type": "message.processed",
+      "seq": 9,
+      "ts": 1710778518700,
+      "channel": "telegram",
+      "sessionKey": "agent:telegram:session_err123",
+      "outcome": "error",
+      "durationMs": 18650,
+      "chatId": "chat_telegram_987654",
+      "messageId": "msg_telegram_456789",
+      "reason": "agent_error",
+      "error": "Agent execution failed after multiple tool errors"
+    },
+    {
+      "type": "webhook.error",
+      "seq": 10,
+      "ts": 1710778518900,
+      "channel": "telegram",
+      "updateType": "message",
+      "chatId": "chat_telegram_987654",
+      "error": "Agent execution failed after multiple tool errors"
+    }
+  ]
+}

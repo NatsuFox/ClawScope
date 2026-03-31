@@ -1,0 +1,185 @@
+{
+  "metadata": {
+    "trace_id": "trace_basic_001",
+    "description": "Simple single-agent execution with basic tool usage",
+    "start_time": "2026-03-18T14:30:00.000Z",
+    "end_time": "2026-03-18T14:30:12.450Z",
+    "total_duration_ms": 12450,
+    "total_cost_usd": 0.0156,
+    "agent_count": 1
+  },
+  "events": [
+    {
+      "type": "webhook.received",
+      "seq": 1,
+      "ts": 1710772200000,
+      "channel": "discord",
+      "updateType": "message",
+      "chatId": "chat_discord_123456"
+    },
+    {
+      "type": "message.queued",
+      "seq": 2,
+      "ts": 1710772200050,
+      "channel": "discord",
+      "source": "webhook",
+      "queueDepth": 1,
+      "sessionKey": "agent:discord:session_abc123"
+    },
+    {
+      "type": "session.state",
+      "seq": 3,
+      "ts": 1710772200100,
+      "sessionKey": "agent:discord:session_abc123",
+      "prevState": "idle",
+      "state": "processing",
+      "reason": "message_received",
+      "queueDepth": 1
+    },
+    {
+      "type": "lifecycle",
+      "seq": 1,
+      "ts": 1710772200150,
+      "runId": "run_basic_001",
+      "sessionKey": "agent:discord:session_abc123",
+      "stream": "lifecycle",
+      "data": {
+        "phase": "start",
+        "startedAt": 1710772200150
+      }
+    },
+    {
+      "type": "model.usage",
+      "seq": 4,
+      "ts": 1710772203800,
+      "runId": "run_basic_001",
+      "sessionKey": "agent:discord:session_abc123",
+      "channel": "discord",
+      "model": "claude-opus-4",
+      "provider": "anthropic",
+      "tokens": {
+        "input": 1450,
+        "output": 520,
+        "cacheRead": 0,
+        "cacheWrite": 1200,
+        "total": 1970
+      },
+      "costUsd": 0.0098,
+      "durationMs": 3650,
+      "context": {
+        "limit": 200000,
+        "used": 1970
+      }
+    },
+    {
+      "type": "tool",
+      "seq": 2,
+      "ts": 1710772204000,
+      "runId": "run_basic_001",
+      "sessionKey": "agent:discord:session_abc123",
+      "stream": "tool",
+      "data": {
+        "phase": "tool_start",
+        "toolCallId": "toolu_01ABC123",
+        "toolName": "Read",
+        "args": {
+          "file_path": "/workspace/config.json"
+        }
+      }
+    },
+    {
+      "type": "tool",
+      "seq": 3,
+      "ts": 1710772204850,
+      "runId": "run_basic_001",
+      "sessionKey": "agent:discord:session_abc123",
+      "stream": "tool",
+      "data": {
+        "phase": "tool_end",
+        "toolCallId": "toolu_01ABC123",
+        "toolName": "Read",
+        "durationMs": 850
+      }
+    },
+    {
+      "type": "tool",
+      "seq": 4,
+      "ts": 1710772204900,
+      "runId": "run_basic_001",
+      "sessionKey": "agent:discord:session_abc123",
+      "stream": "tool",
+      "data": {
+        "phase": "tool_result",
+        "toolCallId": "toolu_01ABC123",
+        "toolName": "Read",
+        "result": "[REDACTED]",
+        "isError": false
+      }
+    },
+    {
+      "type": "model.usage",
+      "seq": 5,
+      "ts": 1710772208200,
+      "runId": "run_basic_001",
+      "sessionKey": "agent:discord:session_abc123",
+      "channel": "discord",
+      "model": "claude-opus-4",
+      "provider": "anthropic",
+      "tokens": {
+        "input": 2100,
+        "output": 380,
+        "cacheRead": 1200,
+        "cacheWrite": 0,
+        "total": 2480
+      },
+      "costUsd": 0.0058,
+      "durationMs": 3300,
+      "context": {
+        "limit": 200000,
+        "used": 4450
+      }
+    },
+    {
+      "type": "lifecycle",
+      "seq": 5,
+      "ts": 1710772212300,
+      "runId": "run_basic_001",
+      "sessionKey": "agent:discord:session_abc123",
+      "stream": "lifecycle",
+      "data": {
+        "phase": "end",
+        "endedAt": 1710772212300
+      }
+    },
+    {
+      "type": "session.state",
+      "seq": 6,
+      "ts": 1710772212350,
+      "sessionKey": "agent:discord:session_abc123",
+      "prevState": "processing",
+      "state": "idle",
+      "reason": "run_completed",
+      "queueDepth": 0
+    },
+    {
+      "type": "message.processed",
+      "seq": 7,
+      "ts": 1710772212400,
+      "channel": "discord",
+      "sessionKey": "agent:discord:session_abc123",
+      "outcome": "completed",
+      "durationMs": 12300,
+      "chatId": "chat_discord_123456",
+      "messageId": "msg_discord_789"
+    },
+    {
+      "type": "webhook.processed",
+      "seq": 8,
+      "ts": 1710772212450,
+      "channel": "discord",
+      "updateType": "message",
+      "durationMs": 12450,
+      "chatId": "chat_discord_123456"
+    }
+  ]
+}
