@@ -372,12 +372,16 @@
                   <p class="qs-sub">本地 API 服务，从 traces/ 目录读取数据</p>
                 </div>
               </div>
-              <div class="qs-terminal">
+              <div class="qs-terminal" data-qs-terminal="2">
                 <div class="terminal-bar">
                   <div class="terminal-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <button class="terminal-copy" type="button" data-qs-copy aria-label="复制命令">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="5" y="5" width="8" height="8" rx="1.5"/><path d="M11 5V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h1"/></svg>
+                    <span data-copy-label>Copy</span>
+                  </button>
                 </div>
                 <div class="terminal-body">
-                  <p><span class="term-prompt">$</span><code>cd viewer/server &amp;&amp; npm install &amp;&amp; npm start</code></p>
+                  <p class="terminal-panel is-active" data-qs-panel="server"><span class="term-prompt">$</span><code>cd viewer/server &amp;&amp; npm install &amp;&amp; npm start</code></p>
                   <p class="term-comment"># → API 在 http://localhost:3001</p>
                 </div>
               </div>
@@ -391,12 +395,16 @@
                   <p class="qs-sub">React Waterfall Viewer，实时渲染 trace</p>
                 </div>
               </div>
-              <div class="qs-terminal">
+              <div class="qs-terminal" data-qs-terminal="3">
                 <div class="terminal-bar">
                   <div class="terminal-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <button class="terminal-copy" type="button" data-qs-copy aria-label="复制命令">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="5" y="5" width="8" height="8" rx="1.5"/><path d="M11 5V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h1"/></svg>
+                    <span data-copy-label>Copy</span>
+                  </button>
                 </div>
                 <div class="terminal-body">
-                  <p><span class="term-prompt">$</span><code>cd viewer &amp;&amp; npm install &amp;&amp; npm run dev</code></p>
+                  <p class="terminal-panel is-active" data-qs-panel="viewer"><span class="term-prompt">$</span><code>cd viewer &amp;&amp; npm install &amp;&amp; npm run dev</code></p>
                   <p class="term-comment"># → Viewer 在 http://127.0.0.1:3013</p>
                 </div>
               </div>
