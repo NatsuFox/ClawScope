@@ -16,7 +16,7 @@
     "observability"
   ],
   "dependencies": {
-    "sql.js": "^1.12.0"
+    "sql.js": "^1.15.1"
   },
   "engines": {
     "node": ">=18.0.0"
